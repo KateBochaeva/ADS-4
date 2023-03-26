@@ -48,9 +48,9 @@ int help(int *arr, int start, int end, int difference, int quantity) {
 int countPairs3(int *arr, int len, int value) {
   int quantity = 0;
   for (int i = 0; i < len/2+1; i++) {
-    if (value>arr[i]){
+    if (value > arr[i]) {
         int difference = value-arr[i];
-        quantity = help(arr, i+1, len, difference, quantity);   
+        quantity = help(arr, i+1, len, difference, quantity);
     }
     }
   if (quantity > 0)
