@@ -24,8 +24,8 @@ int countPairs2(int *arr, int len, int value) {
   }
   if (quantity > 0)
     return quantity;
-  else
-    return 0;*/
+  else*/
+    return 0;
 }
 
 int help(int *arr, int start, int end, int difference, int quantity) {
@@ -50,6 +50,6 @@ int countPairs3(int *arr, int len, int value) {
   }
   if (quantity > 0)
     return quantity;
-  else
-    return 0;*/
+  else*/
+    return 0;
 }
