@@ -1,8 +1,8 @@
 // Copyright 2021 NNTU-CS
 int countPairs1(int *arr, int len, int value) {
   int result = 0;
-  for (int i = 0; i < len; i++){
-    for (int j = 0; j < i; j++){
+  for (int i = 0; i < len; i++) {
+    for (int j = 0; j < i; j++) {
       if (arr[i] + arr[j] == value)
         result++;
     }
@@ -39,15 +39,20 @@ int help(int *arr, int start, int end, int difference, int quantity) {
     if (arr[midle] < difference) {
       quantity = help(arr, midle+1, end, difference, quantity);
     }
+    if (arr[midle] > difference) {
+      quantity = help(arr, start, midle-1, difference, quantity);
+    }
   }
-  return quantity; 
+  return quantity;
 }
 int countPairs3(int *arr, int len, int value) {
   int quantity = 0;
-  for(int i = 0; i < len/2; i++) {
-    int difference = value-arr[i];
-    quantity = help(arr, len/2, len, difference, quantity);
-  }
+  for (int i = 0; i < len/2+1; i++) {
+    if (value>arr[i]){
+        int difference = value-arr[i];
+        quantity = help(arr, i+1, len, difference, quantity);   
+    }
+    }
   if (quantity > 0)
     return quantity;
   else
